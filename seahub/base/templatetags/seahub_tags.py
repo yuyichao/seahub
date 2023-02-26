@@ -78,14 +78,19 @@ FILEEXT_ICON_MAP = {
 
     # video
     'mp4': 'video.png',
+    'm4v': 'video.png',
+    'mkv': 'video.png',
+    'opus': 'video.png',
     'ogv': 'video.png',
     'webm': 'video.png',
     'mov': 'video.png',
     'flv': 'video.png',
     'wmv': 'video.png',
     'rmvb': 'video.png',
+    'rm': 'video.png',
 
     # music file
+    'm4a': 'music.png',
     'mp3': 'music.png',
     'oga': 'music.png',
     'ogg': 'music.png',
@@ -94,9 +99,14 @@ FILEEXT_ICON_MAP = {
     'opus': 'music.png',
     'aac': 'music.png',
     'ac3': 'music.png',
+    'caf': 'music.png',
+    'wav': 'music.png',
     'wma': 'music.png',
 
     # image file
+    'avif': 'pic.png',
+    'heic': 'pic.png',
+    'heif': 'pic.png',
     'jpg': 'pic.png',
     'jpeg': 'pic.png',
     'png': 'pic.png',
@@ -104,6 +114,7 @@ FILEEXT_ICON_MAP = {
     'gif': 'pic.png',
     'bmp': 'pic.png',
     'ico': 'pic.png',
+    'webp': 'pic.png',
     'psd': 'psd.png',
     'draw': 'draw.png',
 

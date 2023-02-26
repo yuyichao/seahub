@@ -14,6 +14,15 @@ except:
     from urllib.request import urlretrieve
 
 from PIL import Image
+try:
+    import pillow_heif
+    pillow_heif.register_heif_opener()
+    pillow_heif.register_avif_opener()
+except:
+    try:
+        import pillow_avif
+    except:
+        pass
 
 from seaserv import get_file_id_by_path, get_repo, get_file_size, \
     seafile_api

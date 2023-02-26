@@ -132,14 +132,14 @@ EMPTY_SHA1 = '0000000000000000000000000000000000000000'
 MAX_INT = 2147483647
 
 PREVIEW_FILEEXT = {
-    IMAGE: ('gif', 'jpeg', 'jpg', 'png', 'heic', 'ico', 'bmp', 'tif', 'tiff', 'psd', 'webp', 'jfif'),
+    IMAGE: ('avif', 'gif', 'jpeg', 'jpg', 'png', 'heic', 'heif', 'ico', 'bmp', 'tif', 'tiff', 'psd', 'webp', 'jfif'),
     DOCUMENT: ('doc', 'docx', 'docxf', 'oform', 'ppt', 'pptx', 'odt', 'fodt', 'odp', 'fodp', 'odg'),
     SPREADSHEET: ('xls', 'xlsx', 'ods', 'fods'),
     SVG: ('svg',),
     PDF: ('pdf', 'ai'),
     MARKDOWN: ('markdown', 'md'),
-    VIDEO: ('mp4', 'ogv', 'webm', 'mov'),
-    AUDIO: ('mp3', 'oga', 'ogg', 'wav', 'flac', 'opus'),
+    VIDEO: ('m4v', 'mkv', 'mp4', 'ogv', 'webm', 'mov'),
+    AUDIO: ('aac', 'mp3', 'caf', 'm4a', 'oga', 'ogg', 'wav', 'flac', 'opus'),
     #'3D': ('stl', 'obj'),
     XMIND: ('xmind',),
     SEADOC: ('sdoc',),
