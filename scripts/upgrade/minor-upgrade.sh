@@ -46,6 +46,33 @@ function migrate_avatars() {
     echo
 }
 
+function move_pids() {
+    echo
+    echo "------------------------------"
+    echo "Moving PID directories ..."
+    echo
+    # move "" directory outside
+    if [[ -d "${TOPDIR}/pids" ]]; then
+        echo "pid directory at correct location"
+    elif [[ -d "${TOPDIR}/seafile-data/pids" ]]; then
+        mv -iv "${TOPDIR}/seafile-data/pids" "${TOPDIR}/pids"
+    else
+        mkdir -v "${TOPDIR}/pids"
+    fi
+    if [[ -f "${default_conf_dir}/gunicorn.conf.py" ]]; then
+        if grep "'seafile-data', 'pids', " \
+                "${default_conf_dir}/gunicorn.conf.py" &> /dev/null; then
+            sed -i.bak "s/'seafile-data', 'pids', /'pids', /" "${default_conf_dir}/gunicorn.conf.py"
+            echo "PID file setting updated in conf/gunicorn.conf.py updated."
+            echo "Please verify and delete the backup file at conf/gunicorn.conf.py.bak"
+        fi
+    fi
+    echo
+    echo "DONE"
+    echo "------------------------------"
+    echo
+}
+
 function make_media_custom_symlink() {
     media_symlink=${INSTALLPATH}/seahub/media/custom
     if [[ -L "${media_symlink}" ]]; then
@@ -144,6 +171,7 @@ function rename_gunicorn_config() {
 validate_seafile_data_dir;
 rename_gunicorn_config;
 migrate_avatars;
+move_pids;
 
 move_old_customdir_outside;
 make_media_custom_symlink;
